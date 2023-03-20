@@ -38,7 +38,7 @@ npm run seed
 The application will be invoked by using the following command:
 
 ```bash
-node server.js OR npm start
+node index.js OR npm start
 ```
 ```
 The social network application enables a user to:

@@ -1,0 +1,28 @@
+{
+  "name": "isocial",
+  "version": "1.0.0",
+  "description": "The back end of a social network application with a working Express.js API to use Mongoose to interact with MongoDB database to demonstrate CRUD. Insomnia application was utilized to demo the routes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "seed": "node utils/seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mewing0328/iSocial.git"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "author": "MaSandra Ewing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mewing0328/iSocial/issues"
+  },
+  "homepage": "https://github.com/mewing0328/iSocial#readme"
+}
