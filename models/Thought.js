@@ -1,3 +1,11 @@
+const { Schema, model } = require('mongoose');
+const reactionSchema = require('./Reaction'); // self-referencing; split out to own Schema
+
+// Schema to create a Thought model
+const thoughtSchema = new Schema (
+
+);
+
 // **Thought**:
 
 // * `thoughtText`
@@ -22,3 +30,7 @@
 // Create a virtual called `reactionCount` that retrieves the length of the thought's `reactions` array field on query.
 
 // ---
+
+const Thought = model('thought', thoughtSchema);
+
+module.exports = Thought;

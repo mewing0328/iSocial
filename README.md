@@ -117,6 +117,12 @@ Credit for tutorials and guides I utilized in my code
 
 [npm](https://remarkablemark.org/blog/2021/08/28/how-to-create-npm-package-lockfile/): How to create a package-lock.json
 
+[mongoose documentation](https://mongoosejs.com/docs/schematypes.html)
+
+[MongoDB documentation](https://www.mongodb.com/docs/v6.0/core/schema-validation/)
+
+[email validation for Schema](https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax)
+
 
 
 
