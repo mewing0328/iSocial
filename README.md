@@ -60,9 +60,9 @@ A walkthrough video demonstrates:
 - how to start the application’s server
 - tests in Insomia for: 
     - Friends: POST, DELETE (CD)
-    - Users: POST, GET, PUT, and Delete (full CRUD)
+    - Users: POST, GET all & single, PUT, and DELETE (full CRUD)
     - Reactions: POST, DELETE (CD)
-    - Thoughts: POST, GET (CR)
+    - Thoughts: POST, GET all & single, PUT, and DELETE (full CRUD)
 ```
 
  ## Screenshots 
