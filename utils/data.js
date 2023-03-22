@@ -2,7 +2,12 @@
 
 const userNames = [
     'mewing0328',
-    ``,
+    `bob123`,
+];
+
+const emails = [
+    'mewing0328@gmail.com',
+    `bob123@hotmail.com`,
 ];
 
 const thoughtTextBodies = [
@@ -16,14 +21,39 @@ const possibleReactions = [
     'This was awesome',
 ];
 
-const users = [];
 
 // Get a random item given an array
 const randomize = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Gets a random username
-const getRandomUserName = () =>
-    `${randomize(userNames)}`;
+// Gets a random users
+const getRandomUserName = (int) => {
+    let results = [];
+    for (let i = 0; i < int; i++) {
+        const userName = randomize(userNames);
+        const email = `${userName}@seed.com`;
+
+        results.push({
+            userName,
+            email,
+            thoughts: randomize(thoughtTextBodies),
+            friends: [...getUserFriends(3)],
+        })
+    }
+};
+
+// Create the reactions that will be added to each thought
+const getUserFriends = (int) => {
+    if (int === 1) {
+        return randomize(userNames);
+    }
+    let results = [];
+    for (let i = 0; i < int; i++) {
+        results.push({
+            username: getRandomUserName(),
+        });
+    }
+    return results;
+};
 
 // Function to generate random thoughts that we can add to the database. Includes thought reactions.
 const getRandomThoughts = (int) => {
@@ -54,5 +84,4 @@ const getThoughtReactions = (int) => {
 };
 
 // Export the functions for use in seed.js
-// You do not need to export getThoughtReactions because it is in the getRandomThoughts function
-module.exports = { getRandomUserName, getRandomThoughts };
+module.exports = { getRandomUserName, getRandomThoughts, getThoughtReactions };
