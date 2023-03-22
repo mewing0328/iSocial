@@ -44,3 +44,9 @@ userSchema
 const User = model('user', userSchema);
 
 module.exports = User;
+
+// // example data
+// {
+//     "username": "lernantino",
+//     "email": "lernantino@gmail.com"
+// }

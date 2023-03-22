@@ -127,6 +127,7 @@ Credit for tutorials and guides I utilized in my code
 
 [Format Timestamps](https://masteringjs.io/tutorials/mongoose/timestamps)
 
+[MOMENT - utilize for fomatting DATE](https://www.sitepoint.com/managing-dates-times-using-moment-js/#:~:text=format('YYYY%2DMM%2D,and%20a%20two%2Ddigit%20day.))
 
 
 

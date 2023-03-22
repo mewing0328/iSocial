@@ -3,30 +3,36 @@ const userSchema = require('./User');
 const reactionSchema = require('./Reaction'); // self-referencing; split out to own Schema
 
 // Schema to create a Thought model
-const thoughtSchema = new Schema (
+const thoughtSchema = new Schema(
     {
         thoughtText: {
-            type: String, 
-            required: true, 
+            type: String,
+            required: true,
             minLength: 1,
             maxLength: 280,
         },
         createdAt: {
-            type: Date, 
+            type: Date,
+            timestamps: {
+                currentTime: () => Math.floor(Date.now() / 1000)
+            },
             // default: Date.now,
             // get: (date) => {
             //     if (date) return date.toISOString().split("T") [0];
             // },
-            timestamps: {
-                currentTime: () => Math.floor(Date.now() / 1000)
-            },
+            
+            //Date.now formatted with Moment npm
+            // default: Date.now,
+            // get: (date) => {
+            //     moment(date).format("YYYY-MM-DD [at] hh:mm a");
+            // },
         },
         // * `username` (The user that created this thought)
         //   * String
         //   * Required
         // NOT SURE about below
         username: {
-            type: String, 
+            type: String,
             required: true,
         },
         reactions: [reactionSchema],
@@ -43,10 +49,17 @@ const thoughtSchema = new Schema (
 thoughtSchema
     .virtual('reactionCount')
     // Get function for this Thought's reaction length number
-    .get(function() {
+    .get(function () {
         return this.reactions.length;
     });
 
 const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
+
+// // example data
+// {
+//     "thoughtText": "Here's a cool thought...",
+//     "username": "lernantino",
+//     "userId": "5edff358a0fcb779aa7b118b"
+// }
