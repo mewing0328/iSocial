@@ -123,6 +123,10 @@ Credit for tutorials and guides I utilized in my code
 
 [email validation for Schema](https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax)
 
+[Format Date](https://www.appsloveworld.com/mongodb/100/220/how-to-use-getter-or-setter-with-mongoose-timestamps)
+
+[Format Timestamps](https://masteringjs.io/tutorials/mongoose/timestamps)
+
 
 
 
