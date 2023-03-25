@@ -113,6 +113,8 @@ iSocial application is covered by MIT license.
 ## Credits
 Credit for tutorials and guides I utilized in my code
 
+George Washington University - Coding Bootcamp: Repository Lesson 18-NoSQL
+
 [npm](https://docs.npmjs.com/creating-a-package-json-file): How to create a package.json file.
 
 [npm](https://remarkablemark.org/blog/2021/08/28/how-to-create-npm-package-lockfile/): How to create a package-lock.json

@@ -1,6 +1,13 @@
 const { Schema, Types } = require('mongoose');
 const moment = require('moment');
 
+// // example data
+// {
+//     "reactionBody": "I like this thought...",
+//     "username": "pmark124",
+//     "thoughtId": "9edff358a0fcb779aa7b112c"
+// }
+
 const reactionSchema = new Schema(
     {
         reactionId: {

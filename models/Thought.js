@@ -3,6 +3,13 @@ const userSchema = require('./User');
 const reactionSchema = require('./Reaction'); // self-referencing; split out to own Schema
 const moment = require('moment');
 
+// // example data
+// {
+//     "thoughtText": "Here's a cool thought...",
+//     "username": "lernantino",
+//     "userId": "5edff358a0fcb779aa7b118b"
+// }
+
 // Schema to create a Thought model
 const thoughtSchema = new Schema(
     {
@@ -57,9 +64,3 @@ const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
 
-// // example data
-// {
-//     "thoughtText": "Here's a cool thought...",
-//     "username": "lernantino",
-//     "userId": "5edff358a0fcb779aa7b118b"
-// }

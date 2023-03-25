@@ -1,5 +1,11 @@
 const { Schema, model } = require('mongoose');
 
+// // example data
+// {
+//     "username": "lernantino",
+//     "email": "lernantino@gmail.com"
+// }
+
 // Schema to create User model
 const userSchema = new Schema (
     {
@@ -50,8 +56,3 @@ const User = model('user', userSchema);
 
 module.exports = User;
 
-// // example data
-// {
-//     "username": "lernantino",
-//     "email": "lernantino@gmail.com"
-// }
