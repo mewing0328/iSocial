@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const friendSchema = require('./Friend'); // self-referencing; split out to own Schema 
 
 // Schema to create User model
 const userSchema = new Schema (
@@ -22,7 +21,13 @@ const userSchema = new Schema (
                 ref: 'Thought',
             },
         ],
-        friends: [friendSchema], // * Array of `_id` values referencing the `User` model (self-reference)
+        // * Array of `_id` values referencing the `User` model (self-reference)
+        friends: [
+            {
+                type: Schema.Types.ObjectId, 
+                ref: 'User',
+            },
+        ],
     },
     {
         toJSON: {

@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const userSchema = require('./User');
 const reactionSchema = require('./Reaction'); // self-referencing; split out to own Schema
+const moment = require('moment');
 
 // Schema to create a Thought model
 const thoughtSchema = new Schema(
@@ -13,9 +14,8 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            timestamps: {
-                currentTime: () => Math.floor(Date.now() / 1000)
-            },
+            default: Date.now,
+            get: timestamp => moment(timestamp).format('YYYY-MM-DD'),
             // default: Date.now,
             // get: (date) => {
             //     if (date) return date.toISOString().split("T") [0];

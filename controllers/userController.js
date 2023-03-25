@@ -1,7 +1,6 @@
 const { User, Thought } = require('../models');
 
 module.exports = {
-
     // * `GET` all users
     getUsers(req, res) {
         User.find()
@@ -16,7 +15,7 @@ module.exports = {
             // This keys value contains the internal revision of the document. 
             // The name of this document property is configurable. The default is __v.
             .select('-__v')
-            .then((user) => 
+            .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
                     : res.json(user)
@@ -35,13 +34,13 @@ module.exports = {
     deleteUser(req, res) {
         User.findOneAndDelete({ _id: req.params.userId })
             .then((user) =>
-            !user
-                ? res.status(404).json({ message: 'No user with that ID!' })
+                !user
+                    ? res.status(404).json({ message: 'No user with that ID!' })
 
-                // **BONUS**: Remove a user's associated thoughts when deleted.
-                : Thought.deleteMany({ _id: { $in: user.thoughts } })
+                    // **BONUS**: Remove a user's associated thoughts when deleted.
+                    : Thought.deleteMany({ _id: { $in: user.thoughts } })
             )
-            .then( () => res.json({ message: 'User and thoughts deleted!' }))
+            .then(() => res.json({ message: 'User and thoughts deleted!' }))
             .catch((err) => res.status(500).json(err));
     },
 
@@ -69,16 +68,16 @@ module.exports = {
             { $addToSet: { friends: req.body } },
             { runValidators: true, new: true }
         )
-            .then((user) => 
+            .then((user) =>
                 !user
                     ? res
                         .status(404)
-                        .json({ message: 'No user found with that ID!'})
+                        .json({ message: 'No user found with that ID!' })
                     : res.json(user)
             )
             .catch((err) => res.status(500).json(err));
     },
-    
+
     // * `DELETE` to remove a friend from a user's friend list
     deleteFriend(req, res) {
         User.findOneAndUpdate(
@@ -86,7 +85,7 @@ module.exports = {
             { $pull: { friends: { friendId: req.params.friendId } } },
             { runValidators: true, new: true }
         )
-            .then((user) => 
+            .then((user) =>
                 !user
                     ? res
                         .status(404)
