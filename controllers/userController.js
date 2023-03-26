@@ -61,11 +61,10 @@ module.exports = {
 
     // * `POST` to add a new friend to a user's friend list
     addFriend(req, res) {
-        console.log('You are adding a new friend.');
-        console.log(req.body);
+        console.log('You added a new friend.');
         User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $addToSet: { friends: req.body } },
+            { $addToSet: { friends: req.params.friendId } },
             { runValidators: true, new: true }
         )
             .then((user) =>
@@ -80,9 +79,10 @@ module.exports = {
 
     // * `DELETE` to remove a friend from a user's friend list
     deleteFriend(req, res) {
+        console.log('You deleted a friend.');
         User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $pull: { friends: { friendId: req.params.friendId } } },
+            { $pull: { friends: req.params.friendId } },
             { runValidators: true, new: true }
         )
             .then((user) =>
