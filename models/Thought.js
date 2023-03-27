@@ -23,21 +23,7 @@ const thoughtSchema = new Schema(
             type: Date,
             default: Date.now,
             get: timestamp => moment(timestamp).format('YYYY-MM-DD'),
-            // default: Date.now,
-            // get: (date) => {
-            //     if (date) return date.toISOString().split("T") [0];
-            // },
-            
-            //Date.now formatted with Moment npm
-            // default: Date.now,
-            // get: (date) => {
-            //     moment(date).format("YYYY-MM-DD [at] hh:mm a");
-            // },
         },
-        // * `username` (The user that created this thought)
-        //   * String
-        //   * Required
-        // NOT SURE about below
         username: {
             type: String,
             required: true,

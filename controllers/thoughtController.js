@@ -46,7 +46,7 @@ module.exports = {
     // * `PUT` to update a thought by its `_id`
     updateThought(req, res) {
         Thought.findOneAndUpdate(
-            { _id: req.body.thoughtId },
+            { _id: req.params.thoughtId },
             { $set: req.body },
             { runValidators: true, new: true }
         )
@@ -63,22 +63,11 @@ module.exports = {
 
     // * `DELETE` to remove a thought by its `_id`
     deleteThought(req, res) {
-        Thought.findByIdAndRemove({ _id: req.params.thoughtId })
+        Thought.findOneAndDelete({ _id: req.params.thoughtId })
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No thought with this id!' })
-                    : User.findOneAndUpdate(
-                        { _id: req.body.thoughtId },
-                        { $pull: { thoughts: req.params.thoughtId } },
-                        { new: true }
-                    )
-            )
-            .then((user) =>
-                !user
-                    ? res
-                        .status(404)
-                        .json({ message: 'Thought created but no user with this id!' })
-                    : res.json({ message: 'Thought was successfully created! ' })
+                    : res.json({ message: 'Thought was deleted successfully.' })
             )
             .catch((err) => res.status(500).json(err));
     },

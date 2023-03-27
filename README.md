@@ -50,7 +50,7 @@ The social network application enables a user to:
 ```
 
 ## Demo
-[Link for demo video](x) (Length of video: x minutes and x seconds)
+[Link for demo video](https://watch.screencastify.com/v/FVim1VG9GLZwrKxxwrzO) (Length of video: 9 minutes and 42 seconds)
 
 The video is also within the assets folder in this repository.
 ```
@@ -59,37 +59,47 @@ A walkthrough video demonstrates:
 - how to seed the database from the command line
 - how to start the application’s server
 - tests in Insomia for: 
-    - Friends: POST, DELETE (CD)
     - Users: POST, GET all & single, PUT, and DELETE (full CRUD)
-    - Reactions: POST, DELETE (CD)
+        - Friends: POST, DELETE (CD)
     - Thoughts: POST, GET all & single, PUT, and DELETE (full CRUD)
+        - Reactions: POST, DELETE (CD)
+
 ```
 
  ## Screenshots 
 
 1. Shows GET routes to return all users and all thoughts being tested in Insomnia:
 
-    <img src="./assets/" style="width:30rem">
+    <img src="./assets/getAllUsers.png" style="width:15rem">
+    <img src="./assets/getAllThoughts.png" style="width:15rem">
+
 
 2. Shows GET routes to return a single user and a single thought being tested in Insomnia:
 
-    <img src="./assets/" style="width:30rem">
+    <img src="./assets/getSingleUsers.png" style="width:15rem">
+    <img src="./assets/getSingleThought.png" style="width:15rem">
 
 3. Shows the POST, PUT, and DELETE routes for users being tested in Insomnia:
 
-    <img src="./assets/" style="width:30rem">
+    <img src="./assets/postUser.png" style="width:15rem">
+    <img src="./assets/putUser.png" style="width:15rem">
+    <img src="./assets/deleteUser.png" style="width:15rem">
 
 4. Shows the POST, PUT, and DELETE routes for thoughts being tested in Insomnia:
 
-    <img src="./assets/readAllP.png" style="width:30rem">
+    <img src="./assets/postThought.png" style="width:15rem">
+    <img src="./assets/putThought.png" style="width:15rem">
+    <img src="./assets/deleteThought.png" style="width:15rem">
 
 5. Shows the POST and DELETE routes for a user’s friend list being tested in Insomnia:
 
-    <img src="./assets/" style="width:30rem">
+    <img src="./assets/postFriend.png" style="width:15rem">
+    <img src="./assets/deleteFriend.png" style="width:15rem">
 
 6. Show the POST and DELETE routes for reactions to thoughts being tested in Insomnia:
 
-    <img src="./assets/" style="width:30rem">
+    <img src="./assets/putReaction.png" style="width:15rem">
+    <img src="./assets/deleteReaction.png" style="width:15rem">
 
 ## Contributing 
 Contributions are welcomed for future versions with features such as additional enhancements.
@@ -130,6 +140,8 @@ George Washington University - Coding Bootcamp: Repository Lesson 18-NoSQL
 [Format Timestamps](https://masteringjs.io/tutorials/mongoose/timestamps)
 
 [MOMENT - utilize for fomatting DATE](https://www.sitepoint.com/managing-dates-times-using-moment-js/#:~:text=format('YYYY%2DMM%2D,and%20a%20two%2Ddigit%20day.))
+
+[100 random thoughts](https://ponly.com/random-thoughts/)
 
 
 
