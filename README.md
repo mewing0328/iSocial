@@ -29,11 +29,6 @@ The application has dependencies (see package.json file). Before using the appli
 npm install
 ```
 
-Next seed the data into the MongoDB database.
-```bash
-npm run seed
-```
-
 ## Usage 
 The application will be invoked by using the following command:
 
